@@ -15,7 +15,7 @@
     input[type=submit]{
         background-color:#4CAF50;
         border:none;
-        color:white;
+        color:black;
         padding:14px 32px;
         text-decoration:none;
         margin:4px 2px;
