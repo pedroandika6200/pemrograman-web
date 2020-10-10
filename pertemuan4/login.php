@@ -18,16 +18,15 @@
         color:white;
         padding:14px 32px;
         text-decoration:none;
-        margin:4px 2px;
+        margin:0px 2px;
         cursor: pointer;
     }
-    .tombol{
+    a{
         background-color:#4CAF50;
         border:none;
         color:white;
-        padding:14px 32px;
+        padding:13px 32px;
         text-decoration:none;
-        margin:4px 2px;
         cursor: pointer;
     }
     </style>
