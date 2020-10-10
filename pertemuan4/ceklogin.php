@@ -3,13 +3,9 @@
 if (isset($_POST['tombolsubmit'])){
     $username=$_POST['username'];
     $password=$_POST['password'];
-    $namadpn=$_POST['namadpn'];
-    $namablk=$_POST['namablk'];
-    $email=$_POST['email'];
 
     if($username=="pedro" && $password=="123"){
-        echo "Nama : ".$namadpn ." " .$namablk."<br>";
-        echo "Email : ".$email;
+        echo "Login Berhasil";
     }
     else{
         echo "Username/Password anda salah";
