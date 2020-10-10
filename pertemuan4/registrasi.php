@@ -25,7 +25,7 @@
 </head>
 <body>
     <p>Login System<p>
-    <form method="post" action="ceklogin.php">
+    <form method="post" action="cekregistrasi.php">
         <label>Nama Depan</label><br>
         <input class="inputan" type="text" name="namadpn"><br>
         <label>Nama Belakang</label><br>
