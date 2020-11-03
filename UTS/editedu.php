@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Edit Education - Portofolio Pedro</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+
+    <?php
+    include_once 'koneksi.php';
+    ?>
+
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="index.php"><img src="assets/img/navbar-logo.png" alt="" /></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ml-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="admedu.php">Back</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+                <div class="text-center">
+                    <h2 class="masthead-subheading text-uppercase">Edit Education</h2>
+                    <h3 class="section-subheading text-muted">Edit your education data list</h3>
+                </div>
+        </header>
+    <section class="page-section">
+    <?php
+    $id = $_GET['id'];
+    $data = mysqli_query($conn,"SELECT * FROM education WHERE id='$id'");
+    while($d = mysqli_fetch_array($data)){
+        ?>
+        <div class="container">
+        <form id="myform" method="post" action="prosesedu.php">
+                <div class="form-group">         
+                    <input type="hidden" class="form-control" name="id" value="<?php echo $d['id']; ?>">
+                </div>
+                <div class="form-group"> 
+                    <label>Judul</label>   
+                     <input type="text" class="form-control" name="nama" value="<?php echo $d['nama']; ?>">
+                 </div>
+                 <div class="form-group"> 
+                    <label>Author</label>   
+                     <input type="text" class="form-control" name="status" value="<?php echo $d['status']; ?>">
+                 </div>
+                <div class="form-group"> 
+                    <label>Tanggal Blog</label>   
+                     <input type="text" class="form-control" name="programs" value="<?php echo $d['programs']; ?>">
+                 </div>
+                 <div class="form-group">
+                    <label>Isi Artikel</label>   
+                    <input type="text" class="form-control" name="alamat" value="<?php echo $d['alamat']; ?>">
+                 </div>
+                    <input type="submit" class="btn btn-primary">
+                       
+        </form>
+    </div>
+        <?php 
+    }
+    ?>
+    </section>
+ 
+<!-- Footer-->
+<footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-left">
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/fedroandika.putra"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/rodr.x6/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="col-lg-4 my-3 my-lg-0">
+                        Copyright © Portofolio Pedro 2020
+                    </div>
+                    <div class="col-lg-4 text-lg-right">
+                        <a class="mr-3" href="index.php">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Contact form JS-->
+        <script src="assets/mail/jqBootstrapValidation.js"></script>
+        <script src="assets/mail/contact_me.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
